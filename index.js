@@ -30,16 +30,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 
  * counter1 invokes counterMaker()/ we assigned counterMaker() to the const counter1;
- * counter1 works with the counterMaker() function only. So counterMaker is its closure.
+ * counter1 works with the counterMaker() and manipulates the return count++ that inside of that function, so counter() is its closure
  * 
  * counter2 doesn't work with the counterMaker() function AT ALL. It only grabs and manipulates the let count=0; that is defined above it
- * counter2 has memory of the variable count--> every time we console.log it , it will add 1 to the stored value
- * 
+ *
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * counter1 uses closure, because it goes back to counterMaker() which is a function with a return statement
- * despite that return statement , we can still access it 
+ * counter1 uses closure, because it goes back to counterMaker() which has another function inside of it that is used by counter1;
+ * despite that return statement , we can still access it
+ * SO counter() is its closure
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *

@@ -44,7 +44,8 @@ Edit the `ReadMe` file with your answers.
 1. In your own words, define closure (1-2 sentences).
 
 <!-- my answer below -->
-closures are the ability for a child function or an inner function to access variables from a higher level scope even after the variables have been called or closed or terminated 
+*closures are the ability for a child function or an inner function to access variables from a higher level scope even after the variables have been called or closed or terminated  --> notes
+*it's a function from which our argument is manipulated --> that function enclosed in another function . So a closure has to be a function inside of another function  --> my words
 
 2. Study the following code, then answer the questions below.
 
@@ -68,7 +69,7 @@ dansRoll();
 
 a. Where is closure used in this code? How can you tell?
 <!-- my answer below -->
-const dansRoll and zoesRoll use closure personalDice() ; so personalDice() is the closure because it has a return statement and the consts defined outside of it are using it.
+const dansRoll and zoesRoll use the same  closure function() (which is located inside of personalDic()) ;
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
 <!-- my answer below -->
