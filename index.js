@@ -158,20 +158,40 @@ function scoreboard(cbGetInningScore, cbInning, inningNumber/* CODE HERE */) {
 
 let arrayAway=[]; //empty array-I'll put Away scores for each round here
 let arrayHome=[]; 
-
+let awayValue=0;
+let homeValue=0;
 for(let i=0; i<inningNumber; i++){
-  arrayAway.push(getInningScore()['Away'])
-  arrayHome.push(getInningScore()['Home'])
+  arrayAway.push(getInningScore()['Away']);
+  arrayHome.push(getInningScore()['Home']);
+
   if(i===0){
-    console.log(`${i+1}st inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+    // console.log(`${i+1}st inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+    awayValue+=arrayAway[i];
+    homeValue+=arrayHome[i];
+    console.log(`${i+1}st inning: awayTeam ${awayValue} - homeTeam ${homeValue}`)
+  
   }else if(i===1){
-  console.log(`${i+1}nd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+  // console.log(`${i+1}nd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+  awayValue+=arrayAway[i];
+  homeValue+=arrayHome[i];
+   console.log(`${i+1}nd inning: awayTeam ${awayValue} - homeTeam ${homeValue}`)
+ 
 }else if(i===2){
-console.log(`${i+1}rd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+// console.log(`${i+1}rd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+awayValue+=arrayAway[i];
+homeValue+=arrayHome[i];
+console.log(`${i+1}rd inning: awayTeam ${awayValue} - homeTeam ${homeValue}`)
+
 }else{
-  console.log(`${i+1}th inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+  // console.log(`${i+1}th inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
+  awayValue+=arrayAway[i];
+  homeValue+=arrayHome[i];
+  console.log(`${i+1}th inning: awayTeam ${awayValue} - homeTeam ${homeValue}`)
+ 
 }
+
 }
+// console.log(arrayAway + '       ' + arrayHome)    ---->checking how my Arrays look like
 
 let finalScoreAway = arrayAway.reduce(function(accumulator, currentValue){
  return accumulator + currentValue;
@@ -182,20 +202,7 @@ let finalScoreHome = arrayHome.reduce(function(accumulator, currentValue){
  },0);
 
 
-// for(let i=0; i<inningNumber; i++){
-//   if(i===0){
-//     console.log(`${i+1}st inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
-//   }else if(i===1){
-//   console.log(`${i+1}nd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
-// }else if(i===2){
-// console.log(`${i+1}rd inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
-// }else{
-//   console.log(`${i+1}th inning: awayTeam ${arrayAway[i]} - homeTeam ${arrayHome[i]}`)
-// }
-// }
-
-return (`Final Score: awayTeam ${finalScoreAway} - homeTeam ${finalScoreHome}`);
-  
+return (`Final Score: awayTeam ${finalScoreAway} - homeTeam ${finalScoreHome}`); 
 }
 
 console.log(scoreboard(finalScore, inning, 9))
